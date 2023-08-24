@@ -1,4 +1,3 @@
-// This is a script that generates the nescacary keypairs for RSA Public key encryption, and then performs a demo
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
