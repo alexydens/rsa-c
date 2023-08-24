@@ -1,0 +1,3 @@
+gcc
+%c -std=c11
+%h -std=c11
