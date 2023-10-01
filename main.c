@@ -173,6 +173,8 @@ int main(int argc, char** argv) {
       //"condimentum. Donec neque elit, efficitur vel orci nec, laoreet interdum "
       //"metus. Nam in nulla nibh viverra fusce.\0";
   char message[SIZE_PRIME];
+
+  // Get message from user
   printf("\n%sENTER MESSAGE: %s", green, clear);
   fgets(message, 512, stdin);
   printf("\n");
