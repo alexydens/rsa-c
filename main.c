@@ -163,16 +163,21 @@ int main(int argc, char** argv) {
   // ENCRYPTING A STRING
 
   // Declare message
-  char message[512] =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque "
-      "venenatis sollicitudin neque et lobortis. Quisque nec elit nec sem "
-      "porta maximus. Proin dignissim id risus malesuada sodales. Nunc "
-      "interdum, dui sit amet dignissim sollicitudin, magna sem auctor dui, at "
-      "euismod sem ex at diam. Cras consectetur mi ac sem fermentum aliquam. "
-      "Sed in pellentesque mauris. Aliquam sagittis dictum ipsum et "
-      "condimentum. Donec neque elit, efficitur vel orci nec, laoreet interdum "
-      "metus. Nam in nulla nibh viverra fusce.\0";
-  mpz_import(M, 512, 1, sizeof(message[0]), 0, 0, message);
+  //char message[SIZE_PRIME] =
+      //"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque "
+      //"venenatis sollicitudin neque et lobortis. Quisque nec elit nec sem "
+      //"porta maximus. Proin dignissim id risus malesuada sodales. Nunc "
+      //"interdum, dui sit amet dignissim sollicitudin, magna sem auctor dui, at "
+      //"euismod sem ex at diam. Cras consectetur mi ac sem fermentum aliquam. "
+      //"Sed in pellentesque mauris. Aliquam sagittis dictum ipsum et "
+      //"condimentum. Donec neque elit, efficitur vel orci nec, laoreet interdum "
+      //"metus. Nam in nulla nibh viverra fusce.\0";
+  char message[SIZE_PRIME];
+  printf("\n%sENTER MESSAGE: %s", green, clear);
+  fgets(message, 512, stdin);
+  printf("\n");
+
+  mpz_import(M, SIZE_PRIME, 1, sizeof(message[0]), 0, 0, message);
   printf("%sMessage (string form): %s%s\n", green, clear,
          message);
   gmp_printf("%sMessage (number form): %s%Zd\n", green, clear,
@@ -187,7 +192,7 @@ int main(int argc, char** argv) {
   gmp_printf("%sDecrypted message (number form): %s%Zd\n", green,
              clear, M);
 
-  char decrypted[512];
+  char decrypted[SIZE_PRIME];
   size_t size = 0;
   mpz_export(decrypted, &size, 1, 1, 1, 0, M);
   printf("%sDecrypted message (string form): %s%s\n", green,
