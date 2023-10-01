@@ -172,6 +172,8 @@ int main(int argc, char** argv) {
       //"Sed in pellentesque mauris. Aliquam sagittis dictum ipsum et "
       //"condimentum. Donec neque elit, efficitur vel orci nec, laoreet interdum "
       //"metus. Nam in nulla nibh viverra fusce.\0";
+
+  // Declare message
   char message[SIZE_PRIME];
 
   // Get message from user
